@@ -95,3 +95,22 @@ productData.forEach(item => {
         productGenerator(item.pThumb ,item.pTitle  , item.pDesc , item.pPrice)
     )
 })
+
+
+// =====================================
+// STEP4: Data structure & AutoGenerator
+
+// Dynamic Element Generator
+function elementGenerator(tagName, attrbiutes) {
+    // Create Element
+    const element = document.createElement(tagName)
+
+    // Does 'Attrbiutes' parameter exist?
+    if (attrbiutes) {
+        Object.keys(attrbiutes).forEach(key => {
+            element.setAttribute(key, attrbiutes[key])
+        })
+    }
+
+    return element
+}
