@@ -142,3 +142,31 @@ function elementGenerator(tagName, attrbiutes, ...childs) {
 
     return element
 }
+// =====================================
+// STEP6: Refactor product Generator (with elemenetGenerator)
+
+function productGenerator(pThumb, pTitle, pDesc, pPrice) {
+    // Create Product Item Div & set CSSClass
+    const productItem = elementGenerator(
+        'div',
+        { class: 'productItem' },
+        // Childs:
+        // Create Product Thumbnail
+        elementGenerator('img', { src: pThumb }),
+        // Create Product Title
+        elementGenerator('span', null, pTitle),
+        // Create Product Desc
+        elementGenerator('p', null, pDesc),
+        // Create Product Price
+        elementGenerator('span', null, pPrice)
+    )
+
+    return productItem
+}
+
+// AutoGenerator
+productData.forEach(product => {
+    productsSection.appendChild(
+        productGenerator(product.pThumb, product.pTitle, product.pDesc, product.pPrice)
+    )
+})
