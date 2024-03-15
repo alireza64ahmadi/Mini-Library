@@ -31,7 +31,7 @@ productPrice.innerText = "520";
 productItem.appendChild(productPrice);
 
 // productSection.appendChild(productItem)
-
+// ===============================================
 // STEP 2 : make project functional
 
 function productGenerator(pThumb, pTitle, pDesc, pPrice) {
@@ -62,7 +62,36 @@ function productGenerator(pThumb, pTitle, pDesc, pPrice) {
     return productItem
 }
 
-productSection.appendChild(
-    productGenerator('images/productImg1.jpg','Dori','A scary and attractive character','520')
-)
+// productSection.appendChild(
+//     productGenerator('images/productImg1.jpg','Dori','A scary and attractive character','520')
+// )
 
+// ==============================================================
+// step 3 : product the project and append them in object
+
+let productData = [
+    {
+        pThumb: 'images/productImg1.jpg',
+        pTitle: 'Dori',
+        pDesc: 'A scary and attractive character',
+        pPrice: '520'
+    },
+    {
+        pThumb: 'images/productImg2.jpg',
+        pTitle: 'Wild Monster',
+        pDesc: 'The wildest monster in history in your hands',
+        pPrice: '120'
+    },
+    {
+        pThumb: 'images/productImg3.jpg',
+        pTitle: 'Bobo Ninja',
+        pDesc: 'No information was found regarding the life of this mysterious person in pintoria...',
+        pPrice: '1199'
+    }
+]
+
+productData.forEach(item => {
+    productSection.appendChild(
+        productGenerator(item.pThumb ,item.pTitle  , item.pDesc , item.pPrice)
+    )
+})
