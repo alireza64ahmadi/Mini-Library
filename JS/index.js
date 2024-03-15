@@ -34,33 +34,33 @@ productItem.appendChild(productPrice);
 // ===============================================
 // STEP 2 : make project functional
 
-function productGenerator(pThumb, pTitle, pDesc, pPrice) {
-    // Create ProductItem Div & set CSSClass
-    const productItem = document.createElement('div')
-    productItem.classList.add('productItem')
+// function productGenerator(pThumb, pTitle, pDesc, pPrice) {
+//     // Create ProductItem Div & set CSSClass
+//     const productItem = document.createElement('div')
+//     productItem.classList.add('productItem')
 
-    // Create Product Thumbnail  & Append to mainDiv
-    const productThumb = document.createElement('img')
-    productThumb.setAttribute('src', pThumb)
-    productItem.appendChild(productThumb)
+//     // Create Product Thumbnail  & Append to mainDiv
+//     const productThumb = document.createElement('img')
+//     productThumb.setAttribute('src', pThumb)
+//     productItem.appendChild(productThumb)
 
-    // Create Product Title & Append to mainDiv
-    const productTitle = document.createElement('span')
-    productTitle.innerText = pTitle
-    productItem.appendChild(productTitle)
+//     // Create Product Title & Append to mainDiv
+//     const productTitle = document.createElement('span')
+//     productTitle.innerText = pTitle
+//     productItem.appendChild(productTitle)
 
-    // Create Product Description  & Append to mainDiv
-    const productDesc = document.createElement('p')
-    productDesc.innerText = pDesc
-    productItem.appendChild(productDesc)
+//     // Create Product Description  & Append to mainDiv
+//     const productDesc = document.createElement('p')
+//     productDesc.innerText = pDesc
+//     productItem.appendChild(productDesc)
 
-    // Create Product Price Element & Append to mainDiv
-    const productPrice = document.createElement('span')
-    productPrice.innerText = pPrice
-    productItem.appendChild(productPrice)
+//     // Create Product Price Element & Append to mainDiv
+//     const productPrice = document.createElement('span')
+//     productPrice.innerText = pPrice
+//     productItem.appendChild(productPrice)
 
-    return productItem
-}
+//     return productItem
+// }
 
 // productSection.appendChild(
 //     productGenerator('images/productImg1.jpg','Dori','A scary and attractive character','520')
@@ -101,19 +101,19 @@ productData.forEach(item => {
 // STEP4: Data structure & AutoGenerator
 
 // Dynamic Element Generator
-function elementGenerator(tagName, attrbiutes) {
-    // Create Element
-    const element = document.createElement(tagName)
+// function elementGenerator(tagName, attrbiutes) {
+//     // Create Element
+//     const element = document.createElement(tagName)
 
-    // Does 'Attrbiutes' parameter exist?
-    if (attrbiutes) {
-        Object.keys(attrbiutes).forEach(key => {
-            element.setAttribute(key, attrbiutes[key])
-        })
-    }
+//     // Does 'Attrbiutes' parameter exist?
+//     if (attrbiutes) {
+//         Object.keys(attrbiutes).forEach(key => {
+//             element.setAttribute(key, attrbiutes[key])
+//         })
+//     }
 
-    return element
-}
+//     return element
+// }
 
 // STEP5: add newFeature to element Generator (LevelUP)
 
@@ -166,7 +166,7 @@ function productGenerator(pThumb, pTitle, pDesc, pPrice) {
 
 // AutoGenerator
 productData.forEach(product => {
-    productsSection.appendChild(
+    productSection.appendChild(
         productGenerator(product.pThumb, product.pTitle, product.pDesc, product.pPrice)
     )
 })
